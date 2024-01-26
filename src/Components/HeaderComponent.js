@@ -8,11 +8,11 @@ const HeaderComponent = () => {
     const onlinestatus = useOnlineStatus();
     // console.log(typeof(onlinestatus))
     return (
-        <div className="flex bg-red-600	">
-            <div className="h-10 w-5">
-                <img src={LOG_URL}></img>
+        <div className="w-full flex bg-yellow-400 justify-center">
+            <div className="w-2/5  bg-slate-400">
+                {/* <img className="w-20" src={LOG_URL}></img> */}
             </div>
-            <div className="">
+            <div className="w-4/5 bg-orange-500">
                 <ul className="flex">
                     <li>
                         Online Status:{onlinestatus ? "Online" : "Offline"}
