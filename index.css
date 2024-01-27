@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .search-class{
+    w-25 h-10 bg-white px-5 rounded-full;
+}
+.search-copy{
+    @apply .search-class;
+} */

@@ -7,34 +7,45 @@ const RestaurantComp = (props) =>{
     const {cloudinaryImageId,name,cuisines,avgRating,areaName} =  resData.info;
     const {slaString} = resData.info.sla;
     return(
-        <div className="bg-red flex">
-            <div className="res-card-img-div">
-                <img src={CON_URL+cloudinaryImageId} className="res-pic"></img>
+    <div className="flex-wrap w-[100%] bg-slate-400">
+        <div className="w-[300px] h-[300px]">
+            <div className="">
+                <img className="w-[250px] h-[150px] object-cover rounded-xl" src={CON_URL+cloudinaryImageId} ></img>
             </div>
-            <div className="details-div">
-                <div className="res-card-name-div">
-                    <h3 className="res-name">{name}</h3>
+            
+            <div className="w-[250px] h-[150px]">
+                
+                {/* name of restaurant */}
+                <div className="w-[250px] h-[35px] overflow-hidden">
+                    <h3 className="p-[10px] font-semibold ml-3">{name}</h3>
                 </div>
-                <div className="res-card-ratinglogo-rating-minutes">
-                    <div className="star-logo-div">
-                        <img src={STAR_LOGO}></img>
+
+                {/* star logo, rating number and duration of delivery */}
+                <div className="flex ml-3 items-center font-semibold"> 
+                    <div className="w-100 h-8">
+                        <img className="w-7" src={STAR_LOGO}></img>
                     </div>
                     <div className="rating-div">
-                        <p className="rating-p">{avgRating}</p>
+                        <p className="">{avgRating}</p>
                     </div>
                     <span>.</span>
-                    <div className="duration-div">
+                    <div className="ml-3">
                         <p>{slaString}</p>
                     </div>
                 </div>
-                <div className="cuisines-div">
-                    <p className="cuisnes-p">{cuisines.join(",   ")+"..."}</p>
+
+                {/* cuisines */}
+                <div className="overflow-hidden w-[200px] h-6 text-gray-500 ml-4">
+                    <p className="text-sm w-[200px] h-6 truncate">{cuisines.join(",  ")}</p>
                 </div>
-                <div className="locality-div">
+                <p></p>
+                {/* area name */}
+                <div className="text-sm w-[200px] h-6 text-gray-500 ml-4">
                     <p>{areaName}</p>
                 </div>
             </div>
         </div>
+    </div>
     )
 }
 export default RestaurantComp;

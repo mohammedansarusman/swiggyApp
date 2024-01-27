@@ -45,13 +45,16 @@ const BodyComponent = () => {
   
     
   return (
-    <div className="body-div">
+    <div className="">
       {console.log('rendering body compeonent')}
 
-      <div className="criteria-div">
+      <div className="bg-orange-500 p-7 mt-3 flex items-start justify-center">
         {/* <h1>{status ? "online" : "offline"}</h1> */}
         <button
-          className="filter-btn"
+          className="
+          w-25 h-10 bg-white px-5 rounded-full 
+          border-double border-gray-400 border-4 hover:text-orange-500
+          transition duration-300 ease-in-out"
           onClick={() => {
             setfilteredRes(
               listOfRestaurant.filter((res) => res.info.avgRating >= 4.3)
@@ -60,9 +63,10 @@ const BodyComponent = () => {
         >
           Top Restaurants
         </button>
+        {/* for search text */}
         <input
           type="text"
-          className="search-text"
+          className="ml-20 mr-10 pl-5 h-10 w-[300px] rounded-md"
           placeholder="Enter your text"
           value={searchText}
           onChange={(e) => {
@@ -71,7 +75,9 @@ const BodyComponent = () => {
         ></input>
 
         <button
-          className="search-button"
+          className="w-25 h-10 bg-white px-5 rounded-full 
+          border-double border-gray-400 border-4 hover:text-orange-500
+          transition duration-300 ease-in-out"
           onClick={() => {
 
             setfilteredRes(
