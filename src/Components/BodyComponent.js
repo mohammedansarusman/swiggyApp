@@ -45,11 +45,11 @@ const BodyComponent = () => {
   
     
   return (
-    <div className="">
+    <div className="w-[100%] flex flex-col justify-center items-center">
       {console.log('rendering body compeonent')}
-
-      <div className="bg-orange-500 p-7 mt-3 flex items-start justify-center">
-        {/* <h1>{status ? "online" : "offline"}</h1> */}
+      
+      {/* orange bar contains top restaurants & search button */}
+      <div className="bg-orange-500 p-7 mt-3 w-[100%] flex items-start justify-center">
         <button
           className="
           w-25 h-10 bg-white px-5 rounded-full 
@@ -57,7 +57,7 @@ const BodyComponent = () => {
           transition duration-300 ease-in-out"
           onClick={() => {
             setfilteredRes(
-              listOfRestaurant.filter((res) => res.info.avgRating >= 4.3)
+              listOfRestaurant.filter((res) => res.info.avgRating >= 4.5)
             );
           }}
         >
@@ -94,12 +94,14 @@ const BodyComponent = () => {
         </button>
       </div>
       {console.log('list of restaurants')}
-      {console.log(listOfRestaurant)};
-
-      {filteredRes.map((res) => (
-        <Link className="reslink" to={"/restaurant/" + res.info.id} key={res.info.id}><RestaurantComp resData={res} /></Link>
-      ))}
-    </div>
+      {console.log(listOfRestaurant)}
+      <div className="flex flex-wrap w-[85%]">
+        {filteredRes.map((res) => (
+          <Link to={"/restaurant/" + res.info.id} key={res.info.id}><RestaurantComp resData={res} /></Link>
+        ))}
+      </div>    
+      
+    </div>  // end of top restaurant and search criteria  
   );// end of return
 };// end of body component
 export default BodyComponent;

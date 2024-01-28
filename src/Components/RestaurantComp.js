@@ -7,8 +7,8 @@ const RestaurantComp = (props) =>{
     const {cloudinaryImageId,name,cuisines,avgRating,areaName} =  resData.info;
     const {slaString} = resData.info.sla;
     return(
-    <div className="flex-wrap w-[100%] bg-slate-400">
-        <div className="w-[300px] h-[300px]">
+    // <div className="flex flex-wrap w-[70.6%] bg-orange-400 outline-dotted">
+        <div className="w-[300px] h-[300px] p-5">
             <div className="">
                 <img className="w-[250px] h-[150px] object-cover rounded-xl" src={CON_URL+cloudinaryImageId} ></img>
             </div>
@@ -45,7 +45,7 @@ const RestaurantComp = (props) =>{
                 </div>
             </div>
         </div>
-    </div>
+    // </div>
     )
 }
 export default RestaurantComp;
